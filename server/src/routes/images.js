@@ -49,8 +49,8 @@ async function analyzeImage(imagePath, reportId, userType) {
     const mode = userType === 'doctor' ? 'doctor' : 'user';
 
     // Hugging Face API configuration
-    const HF_TOKEN = "***REMOVED***";
-    const API_URL = "https://saivathsal-radix.hf.space/analyse";
+    const HF_TOKEN = process.env.HUGGINGFACE_API_TOKEN;
+    const API_URL = process.env.HUGGINGFACE_API_URL;
 
     console.log('Making API request to:', `${API_URL}?mode=${mode}`);
 
